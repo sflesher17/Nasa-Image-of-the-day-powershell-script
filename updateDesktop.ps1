@@ -1,0 +1,1 @@
+RUNDLL32.EXE USER32.DLL,UpdatePerUserSystemParameters ,1 ,True
