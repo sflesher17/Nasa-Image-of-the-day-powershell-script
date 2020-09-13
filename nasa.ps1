@@ -23,7 +23,9 @@ function get-NasaImage{
         New-Item $outputPath -ItemType Directory 
     }
 
-    $info = invoke-restMethod -Uri "https://api.nasa.gov/planetary/apod?api_key=$key$addString"
+    $connection = "https://api.nasa.gov/planetary/apod?api_key=" + $key + $addString
+    write-host $connection -ForegroundColor Cyan 
+    $info = invoke-restMethod -Uri $connection
     $url = $info.hdurl
     write-host "Fetching from $url" -ForegroundColor Cyan
 
